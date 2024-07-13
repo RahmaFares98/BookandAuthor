@@ -1,0 +1,82 @@
+
+body{
+    text-align: left;
+    width :60%;
+}
+
+
+.cont_1{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+}
+.table{
+    display: flex;
+    height: 70%;
+    width: 40%;
+    margin-left: 70%;
+    flex-direction: column;
+
+}
+
+h1,h2{
+    font-size: 40px;
+}
+
+h1{
+    margin-left: 7%;
+
+    }
+
+Label{
+    margin-left: -30px;
+}
+input{
+width: 200px;
+border: black;
+margin-left: 60px;
+border-style:solid;
+position:relative;
+
+}
+
+select{
+    width: 210px;
+    height: 30px;
+    position:relative;
+    margin-left: 40px;
+    border: black;
+    border-style:solid;
+    }
+
+
+
+    div{
+        margin-top: 10px;
+    }
+li{
+position: relative;
+list-style-position: inside;
+list-style-type: square;
+}
+
+.btnSubmit{
+
+    margin-top:15px;
+    border-style: solid;
+    width: 80px;
+    height: 30px;
+    margin-left: 20%;
+    border-color: black;
+    background-color: rgb(216, 208, 208);
+    box-shadow: 3px 4px 7px black;
+}
+
+.text{
+
+    border: black;
+    border-style:solid;
+    width: 210px;
+    height: 80px;
+    margin-left: 60px;
+}

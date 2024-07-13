@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    {% load static %} <!--to link with static file -->
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}">
+</head>
+
+<body>
+    <div >
+        <h1>Add an Author</h1>
+
+        <div class="cont_1">
+            <form action="/add_Author" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label name="first_name">First Name:</label>
+                    <input type="text" name="first_name" placeholder="first_name" required>
+                </div>
+                <div><label name="last_name">Last Name:</label>
+                    <input type="text" name="last_name" placeholder="last_name" required>
+                </div>
+                <div><label name="Notes">Notes :</label>
+                    <input class = "text"type="text" name="Notes" placeholder="Notes" required>
+                </div>
+                <button class="btnSubmit" type="submit">Add </button>
+            </form>
+            <div class="table">
+                <table border="3">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for Author in Authors %}
+                    <tr>
+                        <td>{{Author.id}}</td>
+                        <td>{{Author.first_name}} {{Author.last_name}}</td>
+                        <td><a href="{% url 'author_detail' Author.id %}">View</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
