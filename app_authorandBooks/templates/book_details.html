@@ -11,7 +11,7 @@
     <p>{{ book.description }}</p>
     <h2>Authors:</h2>
     <ul>
-        {% for author in book.authors.all %}
+        {% for author in book.authors.all %}<!--access author by (authors)(related input)(give me all authors assigened to this book )-->
             <li>{{ author.first_name }} {{ author.last_name }}</li>
         {% endfor %}
     </ul>
@@ -28,5 +28,8 @@
     </form>
     
     <a href="{% url 'index' %}">Back to book list</a>
+    
+    <br>
+    <span> Author Name not in Select !</span><a href="/authors"> Click to add</a>
 </body>
 </html>

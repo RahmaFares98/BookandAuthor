@@ -10,7 +10,7 @@
 
     <h2>Books</h2>
     <ul>
-        {% for book in author.books.all %}
+        {% for book in author.books.all %} <!-- give me all books assigened to this author-->
             <li>{{ book.title }}</li>
         {% endfor %}
     </ul>
@@ -27,5 +27,7 @@
     </form>
 
     <a href="{% url 'authors' %}">Back to Author list</a>
+    <br>
+    <span> Book not in Select !</span><a href="/"> Click to add</a>
 </body>
 </html>

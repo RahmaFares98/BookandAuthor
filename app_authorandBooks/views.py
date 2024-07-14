@@ -5,7 +5,7 @@ from .models import Book ,Author
 def index (request): #get data to fill what we need after
     Books= Book.objects.all() #gets all the records in the table
     context ={
-            'Books':Books,}
+            'Books':Books}
     
     
     return render (request,'index.html',context)
@@ -19,10 +19,12 @@ def add_book(request):#Post ,Add data of Book
     return redirect('/')
 
 def book_detail(request, book_id):
-    book = get_object_or_404(Book, id=book_id)
+    #book = get_object_or_404(Book, id=book_id) #This function attempts to retrieve a single Book instance that matches the given parameters 
+    book=Book.objects.get(id=book_id) # retreve a single book but with no raise if there is error
+    authors=Author.objects.all() #gets all the records in the table
     context = {
         'book': book,
-        'authors': Author.objects.all()  # Accessing the related authors correctly
+        'authors':authors 
     }
     return render(request, 'book_details.html', context)
 
